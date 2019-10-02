@@ -1,28 +1,21 @@
 package com.smlf.i18n.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "tab_word")
 public class Word {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
 
     private String content;
 
     private Date createTime;
 
-    private int projectId;
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
+    private Long appId;
 
     public String getContent() {
         return content;
@@ -40,11 +33,19 @@ public class Word {
         this.createTime = createTime;
     }
 
-    public int getProjectId() {
-        return projectId;
+    public Long getId() {
+        return id;
     }
 
-    public void setProjectId(int projectId) {
-        this.projectId = projectId;
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getAppId() {
+        return appId;
+    }
+
+    public void setAppId(Long appId) {
+        this.appId = appId;
     }
 }

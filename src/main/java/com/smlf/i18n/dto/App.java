@@ -1,14 +1,15 @@
 package com.smlf.i18n.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
 @Table(name = "tab_project")
 public class App {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
 
     private String appName;
 
@@ -20,14 +21,22 @@ public class App {
 
     private Date createTime;
 
-    private int userId;
+    private Long userId;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     public String getAppName() {
@@ -70,11 +79,4 @@ public class App {
         this.createTime = createTime;
     }
 
-    public int getUserId() {
-        return userId;
-    }
-
-    public void setUserId(int userId) {
-        this.userId = userId;
-    }
 }

@@ -1,33 +1,34 @@
 package com.smlf.i18n.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "tab_translated_word")
 public class TranslatedWord {
 
-    private int id;
+    @Id
+    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    private Long id;
 
-    private int wordId;
+    private Long wordId;
 
     private String language;
 
     private String translation;
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public int getWordId() {
+    public Long getWordId() {
         return wordId;
     }
 
-    public void setWordId(int wordId) {
+    public void setWordId(Long wordId) {
         this.wordId = wordId;
     }
 
