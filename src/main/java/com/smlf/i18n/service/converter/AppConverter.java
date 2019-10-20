@@ -25,4 +25,13 @@ public class AppConverter {
         return result;
     }
 
+    public App convertVoToDto(AppVo appVo) {
+        if (appVo == null) {
+            return null;
+        }
+        App app = new App();
+        BeanUtils.copyProperties(appVo, app);
+        return app;
+    }
+
 }

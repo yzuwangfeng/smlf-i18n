@@ -12,4 +12,6 @@ public interface AppService {
      * @return
      */
     List<AppVo> listByUserid(Long userid);
+
+    Boolean save(AppVo appVo);
 }

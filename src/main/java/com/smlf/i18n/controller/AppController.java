@@ -1,12 +1,24 @@
 package com.smlf.i18n.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.smlf.i18n.service.AppService;
+import com.smlf.i18n.vo.AppVo;
+import io.swagger.annotations.ApiOperation;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping(value = "/app")
 public class AppController {
 
+    @Autowired
+    private AppService appService;
 
+    @PostMapping("/add")
+    @ApiOperation(value = "新增应用", httpMethod = "POST")
+    public Boolean listAppByUserid(@RequestBody AppVo appVo){
+        return appService.save(appVo);
+    }
 
 }
