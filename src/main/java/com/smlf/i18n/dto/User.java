@@ -12,6 +12,11 @@ public class User {
 
     private String username;
 
+    /**
+     * 微信扫码登陆
+     */
+    private String openid;
+
     public Long getId() {
         return id;
     }
@@ -26,5 +31,13 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getOpenid() {
+        return openid;
+    }
+
+    public void setOpenid(String openid) {
+        this.openid = openid;
     }
 }
