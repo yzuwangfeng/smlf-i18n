@@ -15,9 +15,9 @@ public class AppController {
     @Autowired
     private AppService appService;
 
-    @PostMapping("/add")
+    @PostMapping("/new")
     @ApiOperation(value = "新增应用", httpMethod = "POST")
-    public Boolean listAppByUserid(@RequestBody AppVo appVo){
+    public Boolean add(@RequestBody AppVo appVo){
         return appService.save(appVo);
     }
 
