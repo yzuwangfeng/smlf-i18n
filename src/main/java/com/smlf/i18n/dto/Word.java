@@ -15,6 +15,8 @@ public class Word {
 
     private Date createTime;
 
+    private Long parentId;
+
     private Long appId;
 
     public String getContent() {
@@ -47,5 +49,13 @@ public class Word {
 
     public void setAppId(Long appId) {
         this.appId = appId;
+    }
+
+    public Long getParentId() {
+        return parentId;
+    }
+
+    public void setParentId(Long parentId) {
+        this.parentId = parentId;
     }
 }
