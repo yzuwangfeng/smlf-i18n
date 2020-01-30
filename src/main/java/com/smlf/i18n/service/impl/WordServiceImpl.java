@@ -6,7 +6,11 @@ import com.smlf.i18n.service.WordService;
 import com.smlf.i18n.service.converter.WordConverter;
 import com.smlf.i18n.vo.WordVo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class WordServiceImpl implements WordService {
     @Autowired
     private WordConverter wordConverter;
@@ -20,5 +24,11 @@ public class WordServiceImpl implements WordService {
         Word word = wordConverter.convertVoToDto(wordVo);
         wordRepository.save(word);
         return true;
+    }
+
+    @Override
+    public List<WordVo> listByAppId(Long appId) {
+        List<Word> wordList = wordRepository.findByAppId(appId);
+        return wordConverter.convertDtoToVo(wordList);
     }
 }
